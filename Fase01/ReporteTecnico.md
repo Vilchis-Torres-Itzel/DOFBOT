@@ -158,19 +158,39 @@ La correcta instalación y configuración de estas librerías es esencial para g
   2. Encender el Jetson Nano y esperar la carga del sistema.
 
   **OPERACIÓN:**
-
+  1. Acceder a Jupyter Lab desde un navegador en una PC o dispositivo móvil.
+  2. Cargar y ejecutar los programas de control del brazo robótico.
+  3. Controlar el "DOFBOT" mediante las interfaces disponibles (web, PS2 o Bluetooth).
+     
   **APAGO DEL ROBOT:**
-  
+  1. Cerrar todos los procesos en ejecución.
+  2. Apagar el sistema desde la terminal de Linux.
+  3. Desconectar la fuente de alimentación.
+     
 **RESTRICCIONES DE SOFTWARE, HARDWARE Y MECÁNICAS DEL ROBOT**
   **RESTRICCIONES DE SOFTWARE:**
-    Compatibilidad del Sistema Operativo: El software está diseñado para ejecutarse sobre distribuciones basadas en Ubuntu, optimizadas para la plataforma Jetson Nano. Esto implica que otros sistemas operativos o versiones de Linux no garantizan el correcto funcionamiento del entorno ROS y las aplicaciones asociadas.
-    Dependencias y Versiones Específicas: La integración de ROS, OpenCV y, en algunos casos, frameworks de inteligencia artificial (como TensorFlow o PyTorch) se debe realizar utilizando versiones recomendadas. La actualización o el uso de versiones no validadas puede generar incompatibilidades o fallas en la ejecución.
-    Limitaciones de Recursos Computacionales: El entorno Jetson Nano, pese a ser adecuado para tareas de procesamiento de imagen e inteligencia artificial, tiene restricciones en cuanto a memoria RAM y potencia de cómputo. Esto condiciona la complejidad y el tamaño de los algoritmos que se pueden ejecutar en tiempo real sin afectar el rendimiento global.
-    Integración de Librerías Propietarias: Se han desarrollado controladores y módulos de abstracción específicos para el hardware del DOFBOT. Estas librerías propietarias están diseñadas para interactuar con componentes recomendados; su uso fuera del entorno previsto puede limitar la funcionalidad o provocar comportamientos erráticos.
+  + Compatibilidad del Sistema Operativo: El software está diseñado para ejecutarse sobre distribuciones basadas en Ubuntu, optimizadas para la plataforma Jetson Nano. Esto implica que otros sistemas operativos o versiones de Linux no garantizan el correcto funcionamiento del entorno ROS y las aplicaciones asociadas.
+  + Dependencias y Versiones Específicas: La integración de ROS, OpenCV y, en algunos casos, frameworks de inteligencia artificial (como TensorFlow o PyTorch) se debe realizar utilizando versiones recomendadas. La actualización o el uso de versiones no validadas puede generar incompatibilidades o fallas en la ejecución.
+  + Limitaciones de Recursos Computacionales: El entorno Jetson Nano, pese a ser adecuado para tareas de procesamiento de imagen e inteligencia artificial, tiene restricciones en cuanto a memoria RAM y potencia de cómputo. Esto condiciona la complejidad y el tamaño de los algoritmos que se pueden ejecutar en tiempo real sin afectar el rendimiento global.
+  + Integración de Librerías Propietarias: Se han desarrollado controladores y módulos de abstracción específicos para el hardware del DOFBOT. Estas librerías propietarias están diseñadas para interactuar con componentes recomendados; su uso fuera del entorno previsto puede limitar la funcionalidad o provocar comportamientos erráticos.
     
-  **RESTRICCIONES DE HARDWARE:**
-
-  
-  **RESTRICCIONES MECÁNICAS DEL ROBOT:**
-  
+ **RESTRICCIONES DE HARDWARE:**
+ + Capacidad de carga limitada.
+ + La ejecución de los modelos avanzados de inteligencia artificial dependen del rendimiento de el Jetson Nano.
+    
+ **RESTRICCIONES MECÁNICAS DEL ROBOT:**
+ + Su alcance está limitado por el tamaño del brazo.
+ + Los servomotores deben de calibrarse para mantener la precisión.
+   
 **RESUMEN Y CONCLUSIONES DEL REPORTE**
+ **RESUMEN**
+ En este reporte técnico se detalla el diseño, funcionamiento y operación del "DOFBOT" basado en el Jetson Nano para obtener un brazo robótico de 6 grados de libertad. 
+ Inicialmente, se describe el sistema mecánico, abordando la estructura del brazo, los materiales utilizados y las capacidades de movimiento. Posteriormente, se presenta el sistema electrónico, explicando los componentes clave, como la Jetson Nano, los servomotores, el controlador PWM y los módulos de comunicación, además de su interconexión mediante protocolos de comunicación como I2C, PWM y UART.
+ El software del robot se describe detallando su arquitectura de paquetes, las librerías necesarias y los programas de control implementados. Asimismo, se proporcionan diagramas de bloques y tablas de interfaces de comunicación, facilitando la comprensión del flujo de información dentro del sistema.
+ El documento también incluye el procedimiento de encendido, operación y apagado, garantizando una interacción segura con el robot. Se establecen las restricciones de software, hardware y mecánicas, identificando las limitaciones operativas del sistema.
+
+ **CONCLUSIÓN**
+ El "DOFBOT" basado en Jetson Nano es un sistema robótico bastante eficiente y versátil, pensado para manipular objetos, aprender con inteligencia artificial y trabajar con visión por computadora. Su diseño modular hace que sea fácil agregarle nuevas funciones, por lo que es una herramienta ideal para investigación, educación y hasta aplicaciones industriales.
+ Desde el lado mecánico, su estructura es resistente y sus articulaciones son precisas, lo que ayuda a que los movimientos sean estables y repetibles. En la parte electrónica, combinar la Jetson Nano con el controlador PCA9685 y los servos permite un control fluido y eficiente, además de que los sensores y módulos de comunicación le dan más percepción y autonomía.
+ El software que desarrollamos hace que programar el robot sea bastante flexible, ya que usamos librerías avanzadas para procesamiento de imágenes, IA y control de movimiento. Eso sí, encontramos algunas limitaciones, como la necesidad de una fuente de alimentación estable y el alto consumo de los servos, lo que puede generar sobrecalentamiento si no se monitorea bien.
+ En general, el "DOFBOT" es una muy buena opción para automatización y proyectos avanzados en robótica, ya que tiene un buen equilibrio entre potencia, precisión y posibilidades de expansión. Para futuras mejoras, estaría bueno agregar más sensores, hacer que el sistema consuma menos energía y optimizar el software de control para sacarle aún más provecho.
