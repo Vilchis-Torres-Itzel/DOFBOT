@@ -106,6 +106,77 @@ DESCRIPCIÓN, DIAGRAMA DE BLOQUES Y TABLAS REFERENTES A LOS PUERTOS E INTERFACES
   +
 
 DESCRIPCIÓN DE SOFTWARE, ESTRUCTURA DE PAQUETES, DESCRIPCIÓN DE LIBRERÍAS PROPIERARIAS Y DE TERCEROS NECESARIAS, LISTADO DE PROGRAMAS DE OPERACIÓN DEL ROBOT Y DESCRIPCIÓN DE SU PROPÓSITO. 
+1. Descripción del Software
+El software del DOFBOT está diseñado para aprovechar las capacidades del Jetson Nano, integrándose en un entorno Linux (generalmente Ubuntu) y aprovechando herramientas de desarrollo modernas para robótica. Está compuesto por:
+
+Arquitectura modular: El sistema está dividido en varios módulos que gestionan la adquisición de datos de sensores, procesamiento de imagen y ejecución de algoritmos de control.
+
+Integración con ROS: La implementación se apoya en el Robot Operating System (ROS) para gestionar la comunicación entre nodos, facilitando la interoperabilidad de componentes (sensores, actuadores y módulos de inteligencia) y permitiendo la expansión futura.
+
+Soporte para visión y AI: Incluye componentes para el procesamiento de imágenes (por ejemplo, usando OpenCV) y, en algunos casos, integración con frameworks de aprendizaje automático (como TensorFlow o PyTorch) para tareas de reconocimiento o navegación inteligente.
+
+Interfaz de usuario y control remoto: Proporciona herramientas y programas que permiten tanto el control manual (teleoperado) como la operación autónoma del robot.
+
+
+2. Estructura de Paquetes
+El repositorio se organiza de forma que facilita el desarrollo y despliegue del sistema completo. Entre los principales directorios y paquetes se encuentran:
+
+  Espacio de trabajo ROS (ros_ws):
+        src: Contiene el código fuente de los nodos ROS desarrollados para DOFBOT. Aquí se alojan los módulos de control, procesamiento de imagen y comunicación.
+        launch: Archivos de lanzamiento (launch files) que permiten iniciar de forma conjunta y coordinada los distintos nodos y servicios necesarios para el funcionamiento del robot.
+        config: Archivos de configuración con parámetros críticos, como la calibración de sensores, parámetros de control de motores y configuraciones de red.
+
+
+  Documentación (/doc):
+    Este directorio reúne manuales de instalación, guías de uso y notas de desarrollo que ayudan a comprender tanto la estructura interna como el proceso de despliegue del software.
+
+  Scripts (/scripts):
+    Scripts de automatización que facilitan tareas comunes, como la inicialización del entorno, actualizaciones de firmware y diagnósticos del sistema.
+
+
+3. Librerías y Dependencias
+Librerías Propietarias
+    Drivers y Controladores de Hardware:
+    Desarrollados por Yahboom, estos módulos permiten la comunicación directa con los actuadores y sensores específicos del DOFBOT. Incluyen rutinas optimizadas para el manejo de motores, servos y dispositivos     
+    periféricos.
+
+    Interfaces de Abstracción:
+    Librerías diseñadas para encapsular funciones específicas del hardware, de forma que se simplifique la integración en el ecosistema ROS y se permita la reutilización en otros proyectos de la misma familia de robots.
+
+Librerías de Terceros
+
+  ROS (Robot Operating System):
+    El núcleo del sistema se apoya en ROS, que permite la estructuración en nodos, la mensajería entre procesos y la integración con numerosos paquetes disponibles en la comunidad.
+
+  OpenCV:
+    Utilizada para el procesamiento de imágenes y visión artificial, facilitando tareas como la detección de obstáculos, seguimiento de objetos y procesamiento en tiempo real.
+
+  Frameworks de Inteligencia Artificial (opcional):
+    Dependiendo de la versión o de las aplicaciones específicas, puede incluir integración con TensorFlow o PyTorch para implementar algoritmos de reconocimiento, clasificación o detección.
+
+  Dependencias estándar:
+    Bibliotecas de comunicación serial, utilidades en C++ y Python, y otros paquetes necesarios para la interacción con el sistema operativo y la ejecución de tareas en tiempo real.
+
+La correcta instalación y configuración de estas librerías es esencial para garantizar el funcionamiento óptimo del robot, y suelen encontrarse referenciadas en archivos como package.xml, CMakeLists.txt o en scripts de instalación incluidos en el repositorio.
+
+
+4. Programas de Operación y su Propósito
+Dentro del ecosistema de software del DOFBOT se incluyen varios programas (o nodos ROS) que, en conjunto, permiten la operación integral del robot. Algunos de ellos son:
+
+    Nodo de Control Principal (dofbot_control_node):
+    Es el encargado de orquestar la recepción de comandos, gestionar la ejecución de rutinas de movimiento y coordinar la interacción entre los diferentes módulos. Su función es la de actuar como “cerebro” del robot, integrando información de sensores y enviando órdenes a los actuadores.
+
+    Nodo de Visión (dofbot_vision_node):
+    Implementa algoritmos de procesamiento de imagen utilizando OpenCV, permitiendo la detección de obstáculos, reconocimiento de patrones o seguimiento de objetos en el entorno. Este nodo es crucial para aplicaciones de navegación autónoma y para interactuar de forma inteligente con el entorno.
+
+    Nodo de Navegación (dofbot_navigation_node):
+    Desarrollado para integrar datos de sensores (como LIDAR, ultrasonido o cámaras) y algoritmos de planificación de ruta, este programa se encarga de calcular trayectorias seguras y eficientes, permitiendo la operación autónoma del robot en entornos complejos.
+
+    Nodo de Teleoperación (dofbot_teleop_node):
+    Permite el control manual del robot a través de interfaces remotas (por ejemplo, mediante un joystick o una aplicación móvil). Facilita la operación directa cuando se requiere intervención humana o pruebas en entornos controlados.
+
+    Herramientas de Diagnóstico y Monitoreo (dofbot_diagnostics):
+    Conjunto de utilidades que recogen información en tiempo real sobre el estado del robot (como temperatura, consumo de energía, rendimiento de motores, etc.) y facilitan la identificación de fallos o la optimización del rendimiento.
 
 PROCEDIMIENTO DE ENCENDIDO, OPERACIÓN Y APAGO DEL ROBOT
 
