@@ -181,5 +181,18 @@ Dentro del ecosistema de software del DOFBOT se incluyen varios programas (o nod
 PROCEDIMIENTO DE ENCENDIDO, OPERACIÓN Y APAGO DEL ROBOT
 
 RESTRICCIONES DE SOFTWARE, HARDWARE Y MECÁNICAS DEL ROBOT
+1. Restricciones de Software
+    Compatibilidad del Sistema Operativo:
+El software está diseñado para ejecutarse sobre distribuciones basadas en Ubuntu, optimizadas para la plataforma Jetson Nano. Esto implica que otros sistemas operativos o versiones de Linux no garantizan el correcto funcionamiento del entorno ROS y las aplicaciones asociadas.
+
+    Dependencias y Versiones Específicas:
+La integración de ROS, OpenCV y, en algunos casos, frameworks de inteligencia artificial (como TensorFlow o PyTorch) se debe realizar utilizando versiones recomendadas. La actualización o el uso de versiones no validadas puede generar incompatibilidades o fallas en la ejecución.
+
+    Limitaciones de Recursos Computacionales:
+El entorno Jetson Nano, pese a ser adecuado para tareas de procesamiento de imagen e inteligencia artificial, tiene restricciones en cuanto a memoria RAM y potencia de cómputo. Esto condiciona la complejidad y el tamaño de los algoritmos que se pueden ejecutar en tiempo real sin afectar el rendimiento global.
+
+    Integración de Librerías Propietarias:
+ Se han desarrollado controladores y módulos de abstracción específicos para el hardware del DOFBOT. Estas librerías propietarias están diseñadas para interactuar con componentes recomendados; su uso fuera del entorno previsto puede limitar la funcionalidad o provocar comportamientos erráticos.
+
 
 RESUMEN Y CONCLUSIONES DEL REPORTE
