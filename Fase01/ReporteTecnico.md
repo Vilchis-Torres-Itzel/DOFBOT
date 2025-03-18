@@ -124,23 +124,23 @@ Por otro lado, la placa PCA9685 controla los servomotores por medio de ángulos 
 
   ## **LIBRERÍAS Y DEPENDENCIAS**:
   
-  ###Librerías Propietarias
+  ### Librerías Propietarias
      + Drivers y Controladores de Hardware: Desarrollados por Yahboom, estos módulos permiten la comunicación directa con los actuadores y sensores específicos del DOFBOT. Incluyen rutinas optimizadas para el manejo de motores, servos y dispositivos periféricos.
      + Interfaces de Abstracción: Librerías diseñadas para encapsular funciones específicas del hardware, de forma que se simplifique la integración en el ecosistema ROS y se permita la reutilización en otros proyectos de la misma familia de robots.
   
-  ###Librerías de Terceros:
+  ### Librerías de Terceros:
      + ROS (Robot Operating System): El núcleo del sistema se apoya en ROS, que permite la estructuración en nodos, la mensajería entre procesos y la integración con numerosos paquetes disponibles en la comunidad.
      + OpenCV: Utilizada para el procesamiento de imágenes y visión artificial, facilitando tareas como la detección de obstáculos, seguimiento de objetos y procesamiento en tiempo real.
 
-  ###Frameworks de Inteligencia Artificial (opcional):
+  ### Frameworks de Inteligencia Artificial (opcional):
     Dependiendo de la versión o de las aplicaciones específicas, puede incluir integración con TensorFlow o PyTorch para implementar algoritmos de reconocimiento, clasificación o detección.
 
-  ###Dependencias estándar:
+  ### Dependencias estándar:
     Bibliotecas de comunicación serial, utilidades en C++ y Python, y otros paquetes necesarios para la interacción con el sistema operativo y la ejecución de tareas en tiempo real.
 
 La correcta instalación y configuración de estas librerías es esencial para garantizar el funcionamiento óptimo del robot, y suelen encontrarse referenciadas en archivos como package.xml, CMakeLists.txt o en scripts de instalación incluidos en el repositorio.
 
-  ##**PROGRAMAS DE OPERACIÓN Y SU PROPÓSITO:**
+  ## **PROGRAMAS DE OPERACIÓN Y SU PROPÓSITO:**
   
   Dentro del ecosistema de software del DOFBOT se incluyen varios programas (o nodos ROS) que, en conjunto, permiten la operación integral del robot. Algunos de ellos son:
     + Nodo de Control Principal (dofbot_control_node):Es el encargado de orquestar la recepción de comandos, gestionar la ejecución de rutinas de movimiento y coordinar la interacción entre los diferentes módulos. Su función es la de actuar como “cerebro” del robot, integrando información de sensores y enviando órdenes a los actuadores.
