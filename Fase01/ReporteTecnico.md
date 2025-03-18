@@ -21,8 +21,73 @@ La Jetson Nano (unidad de procesamiento) es el cerebro del "DOFBOT", ejecuta los
 Por otro lado, la placa PCA9685 controla los servomotores por medio de ángulos recibidos por la Jetson Nano.
 
 DESCRIPCIÓN, DIAGRAMA DE BLOQUES Y TABLAS REFERENTES A LOS PUERTOS E INTERFACES DE COMUNICACIÓN DE ELEMENTOS
-  DESCRIPCIONES: 
+  DESCRIPCIONES DE LAS INTERFACES DE COMUNICACIÓN: 
+  GPIO: Son los pines de entras y salida, pueden recibir señales digitales de los sensores y enviar señales de control, pueden ser operados con 3.3V.
+  I2C:Es un bus de comunicación en serie que permite conectar varios dispositivos  con el uso de cambles SDA y SCL. 
+  PWM: La señal modulada en ancho de pulso se encarga de controlar la posición de los servomotores, esto lo hace por medio de los ángulos de rotación. 
+  UART: Es un protocolo de comunicación serial asíncrona que se utiliza para enviar y recibir datos entre el Jetson Nano y los microcontroladores externos. 
+  USB: Esta interfaz permite conectar la cámara HD y otros dispositivos de almacenamiento. 
+  Wifi/Bluetooth: Es la conexión inalámbrica que permite controlar el robot desde una PC, teléfono móvil o tablet a través de una aplicación web o SSH. 
+  Interfaz PS2: Ayuda a controlar el "DOFBOT" de manera manual, recibiendo señales de botones y joysticks. 
   
+  DIAGRAMA DE BLOQUES DEL SISTEMA: 
+  Este diagrama muestra la arquitectura de comunicación del DOFBOT:
+                   +------------------+
+                   |   Jetson Nano    |
+                   +------------------+
+                             │
+       ┌─────────────────────┼───────────────────────────┐
+       │                     │                           │
+  +-----------+      +------------------+       +-----------------+
+  |   GPIO    |      |       I2C        |       |      UART       |
+  +-----------+      +------------------+       +-----------------+
+       │                     │                           │
+       │                     │                           │
+  +-----------+      +------------------+       +-------------------+
+  |  Sensores |----->|   Módulos I2C    |       |  Microcontrolador |
+  |  Digitales|      | (Pantalla LCD,   |       |  (Arduino/ESP32)  |
+  +-----------+      |  Sensores, IMU)  |       +-------------------+
+                     +------------------+
+                            │
+                            │
+                     +-----------------+
+                     |   Servomotores  |
+                     |   (PWM control) |
+                     +-----------------+
+                     
+  TABLAS REFERENTES A LOS PUERTOS E INTERFACES DE COMUNICACIÓN DE ELEMENTOS
+  Resumen de los puertos de comunicación: 
+  +----------+-------------+-----------+----------------------------------------+---------------------------+
+  |  PUERTO  |    TIPO     |  CANTIDAD |               DESCRIPCIÓN              |        APLICACIONES       |
+  +----------+-------------+-----------+----------------------------------------+---------------------------+
+  |   GPIO   |   Digital   | 40 pines  | Pines programables como entrada/salida |Sensores, LEDs, relés      |
+  +----------+-------------+-----------+----------------------------------------+---------------------------+
+  |    I2C   |    Serial   | 2 buses   | Comunicación con dispositivos I2C      |Controladores inalámbricos |
+  +----------+-------------+-----------+------------------------------------+---------------------------+
+  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
+  +----------+-------------+-----------+------------------------------------+---------------------------+
+  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
+  +----------+-------------+-----------+------------------------------------+---------------------------+
+  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
+  +----------+-------------+-----------+------------------------------------+---------------------------+
+  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
+  +----------+-------------+-----------+------------------------------------+---------------------------+
+  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
+  +----------+-------------+-----------+------------------------------------+---------------------------+
+  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
+  +----------+-------------+-----------+------------------------------------+---------------------------+
+  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
+  +----------+-------------+-----------+------------------------------------+---------------------------+
+  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
+  +----------+-------------+-----------+------------------------------------+---------------------------+
+  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
+  +----------+-------------+-----------+------------------------------------+---------------------------+
+  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
+  +----------+-------------+-----------+------------------------------------+---------------------------+
+  
+  APLICACIONES:
+
+  CONSIDERACIONES TÉCNICAS:
 
 
 DESCRIPCIÓN DE SOFTWARE, ESTRUCTURA DE PAQUETES, DESCRIPCIÓN DE LIBRERÍAS PROPIERARIAS Y DE TERCEROS NECESARIAS, LISTADO DE PROGRAMAS DE OPERACIÓN DEL ROBOT Y DESCRIPCIÓN DE SU PROPÓSITO. 
