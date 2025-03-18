@@ -55,7 +55,7 @@ DESCRIPCIÓN, DIAGRAMA DE BLOQUES Y TABLAS REFERENTES A LOS PUERTOS E INTERFACES
                      |   (PWM control) |
                      +-----------------+
                      
-  TABLAS REFERENTES A LOS PUERTOS E INTERFACES DE COMUNICACIÓN DE ELEMENTOS
+  TABLA REFERENTE A LOS PUERTOS E INTERFACES DE COMUNICACIÓN DE ELEMENTOS:
   Resumen de los puertos de comunicación: 
   +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
   |  PUERTO  |    TIPO     |  CANTIDAD |                   DESCRIPCIÓN                   |             APLICACIONES            |
@@ -79,6 +79,7 @@ DESCRIPCIÓN, DIAGRAMA DE BLOQUES Y TABLAS REFERENTES A LOS PUERTOS E INTERFACES
   |    PS2   |   Digital   | 1 puerto  | Conexión de un control                          |Control manual brazo robótico        |
   +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
 
+  APLICACIONES:
   Aplicaciones y funcionalidades de cada interfaz: 
   +----------+---------------------------------------------+----------------------------------------------------------+
   | INTERFAZ |                FUNCIONALIDAD                |                      EJEMPLOS DE USO                     |
@@ -98,12 +99,11 @@ DESCRIPCIÓN, DIAGRAMA DE BLOQUES Y TABLAS REFERENTES A LOS PUERTOS E INTERFACES
   |Bluetooth |Conexión con controladores inalámbricos      |Control del brazo por medio de botones y joystick         |
   +----------+---------------------------------------------+----------------------------------------------------------+
 
-  
-  
-  APLICACIONES:
-
   CONSIDERACIONES TÉCNICAS:
-
+  +
+  +
+  +
+  +
 
 DESCRIPCIÓN DE SOFTWARE, ESTRUCTURA DE PAQUETES, DESCRIPCIÓN DE LIBRERÍAS PROPIERARIAS Y DE TERCEROS NECESARIAS, LISTADO DE PROGRAMAS DE OPERACIÓN DEL ROBOT Y DESCRIPCIÓN DE SU PROPÓSITO. 
 
