@@ -57,27 +57,18 @@ DESCRIPCIÓN, DIAGRAMA DE BLOQUES Y TABLAS REFERENTES A LOS PUERTOS E INTERFACES
                      
   TABLA REFERENTE A LOS PUERTOS E INTERFACES DE COMUNICACIÓN DE ELEMENTOS:
   Resumen de los puertos de comunicación: 
-  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
-  |  PUERTO  |    TIPO     |  CANTIDAD |                   DESCRIPCIÓN                   |             APLICACIONES            |
-  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
-  |   GPIO   |   Digital   | 40 pines  | Pines programables como entrada/salida          |Sensores, LEDs, relés                |
-  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
-  |    I2C   |    Serial   | 2 buses   | Comunicación con dispositivos I2C               |Controladores inalámbricos           |
-  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
-  |    PWM   |   Digital   | 6 canales | Modulación de ancho de pulso                    |Control de servomotores              |
-  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
-  |   UART   |    Serial   | 2 puertos | Comunicación en serie con dispositivos externos |Controladores inalámbricos           |
-  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
-  |  USB 3.0 |    Serial   | 2 puertos | Alta velocidad de transferencia                 |Conexión de cámara HD, almacenamiento|
-  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
-  |  USB 2.0 |   Serial    | 2 puertos | Transferencia est+andar                         |Controladores inalámbricos           |
-  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
-  |   Wifi   | Inalámbrico | 1 módulo  | Comunicación inalámbrica                        |Control remoto robot                 |
-  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
-  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos              |Controladores inalámbricos           |
-  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
-  |    PS2   |   Digital   | 1 puerto  | Conexión de un control                          |Control manual brazo robótico        |
-  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
+| PUERTO | TIPO | CANTIDAD | DESCRIPCIÓN | APLICACIONES |
+| ------:| ---- | -------- | ----------- | ------------ |
+| GPIO | Digital | 40 pines | Pines programables como entrada/salida | Sensores, LEDs, relés |
+| I2C | Serial | 2 buses | Comunicación con dispositivos I2C | Controladores inalámbricos |
+| PWM | Digital | 6 canales | Modulación de ancho de pulso | Control de servomotores |
+| UART | Serial | 2 puertos | Comunicación en serie con dispositivos externos | Controladores inalámbricos |
+| USB 3.0 | Serial | 2 puertos | Alta velocidad de transferencia | Conexión de cámara HD, almacenamiento |
+| USB 2.0 | Serial | 2 puertos | Transferencia estandar |Controladores inalámbricos |
+| Wifi | Inalámbrico | 1 módulo | Comunicación inalámbrica |Control remoto robot |
+| Bluetooth | Inalámbrico | 1 módulo | Conexión con dispositivos externos | Controladores inalámbricos |
+| PS2 | Digital | 1 puerto | Conexión de un control |Control manual brazo robótico |
+
 
   APLICACIONES:
   Aplicaciones y funcionalidades de cada interfaz: 
