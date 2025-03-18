@@ -57,33 +57,48 @@ DESCRIPCIÓN, DIAGRAMA DE BLOQUES Y TABLAS REFERENTES A LOS PUERTOS E INTERFACES
                      
   TABLAS REFERENTES A LOS PUERTOS E INTERFACES DE COMUNICACIÓN DE ELEMENTOS
   Resumen de los puertos de comunicación: 
-  +----------+-------------+-----------+----------------------------------------+---------------------------+
-  |  PUERTO  |    TIPO     |  CANTIDAD |               DESCRIPCIÓN              |        APLICACIONES       |
-  +----------+-------------+-----------+----------------------------------------+---------------------------+
-  |   GPIO   |   Digital   | 40 pines  | Pines programables como entrada/salida |Sensores, LEDs, relés      |
-  +----------+-------------+-----------+----------------------------------------+---------------------------+
-  |    I2C   |    Serial   | 2 buses   | Comunicación con dispositivos I2C      |Controladores inalámbricos |
-  +----------+-------------+-----------+------------------------------------+---------------------------+
-  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
-  +----------+-------------+-----------+------------------------------------+---------------------------+
-  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
-  +----------+-------------+-----------+------------------------------------+---------------------------+
-  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
-  +----------+-------------+-----------+------------------------------------+---------------------------+
-  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
-  +----------+-------------+-----------+------------------------------------+---------------------------+
-  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
-  +----------+-------------+-----------+------------------------------------+---------------------------+
-  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
-  +----------+-------------+-----------+------------------------------------+---------------------------+
-  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
-  +----------+-------------+-----------+------------------------------------+---------------------------+
-  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
-  +----------+-------------+-----------+------------------------------------+---------------------------+
-  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
-  +----------+-------------+-----------+------------------------------------+---------------------------+
-  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos |Controladores inalámbricos |
-  +----------+-------------+-----------+------------------------------------+---------------------------+
+  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
+  |  PUERTO  |    TIPO     |  CANTIDAD |                   DESCRIPCIÓN                   |             APLICACIONES            |
+  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
+  |   GPIO   |   Digital   | 40 pines  | Pines programables como entrada/salida          |Sensores, LEDs, relés                |
+  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
+  |    I2C   |    Serial   | 2 buses   | Comunicación con dispositivos I2C               |Controladores inalámbricos           |
+  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
+  |    PWM   |   Digital   | 6 canales | Modulación de ancho de pulso                    |Control de servomotores              |
+  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
+  |   UART   |    Serial   | 2 puertos | Comunicación en serie con dispositivos externos |Controladores inalámbricos           |
+  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
+  |  USB 3.0 |    Serial   | 2 puertos | Alta velocidad de transferencia                 |Conexión de cámara HD, almacenamiento|
+  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
+  |  USB 2.0 |   Serial    | 2 puertos | Transferencia est+andar                         |Controladores inalámbricos           |
+  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
+  |   Wifi   | Inalámbrico | 1 módulo  | Comunicación inalámbrica                        |Control remoto robot                 |
+  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
+  |Bluetooth | Inalámbrico | 1 módulo  | Conexión con dispositivos externos              |Controladores inalámbricos           |
+  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
+  |    PS2   |   Digital   | 1 puerto  | Conexión de un control                          |Control manual brazo robótico        |
+  +----------+-------------+-----------+-------------------------------------------------+-------------------------------------+
+
+  Aplicaciones y funcionalidades de cada interfaz: 
+  +----------+---------------------------------------------+----------------------------------------------------------+
+  | INTERFAZ |                FUNCIONALIDAD                |                      EJEMPLOS DE USO                     |
+  +----------+---------------------------------------------+----------------------------------------------------------+
+  |   GPIO   |Control de sensores y actuadores             |Encender un LED, activar un sensor de proximidad          |
+  +----------+---------------------------------------------+----------------------------------------------------------+
+  |    I2C   |Comunicación con dispositivos de expansión   |Conectar un módulo IMU para medir inclinación             |
+  +----------+---------------------------------------------+----------------------------------------------------------+
+  |    PWM   |Control de servomotores                      |Posicionar el brazo en un ángulo específico               |
+  +----------+---------------------------------------------+----------------------------------------------------------+
+  |   UART   |Comunicación en serie con microcontroladores |Recibir datos de un sensor conectado a un microcontrolador|
+  +----------+---------------------------------------------+----------------------------------------------------------+
+  |    USB   |Conexión de periféricos                      |Capturar imágenes con la cámara HD                        |
+  +----------+---------------------------------------------+----------------------------------------------------------+
+  |   Wifi   |Control remoto del robot                     |Enviar comandos desde un smartphone                       |
+  +----------+---------------------------------------------+----------------------------------------------------------+
+  |Bluetooth |Conexión con controladores inalámbricos      |Control del brazo por medio de botones y joystick         |
+  +----------+---------------------------------------------+----------------------------------------------------------+
+
+  
   
   APLICACIONES:
 
